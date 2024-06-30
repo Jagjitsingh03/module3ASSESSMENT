@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+pragma solidity 0.8.18;
 
 contract MyToken {
     address public owner;
@@ -58,6 +58,27 @@ contract MyToken {
     // Function to destroy the contract
     function destroy() public onlyOwner whenNotDestroyed {
         destroyed = true;
+    }
+
+    // Function to mint tokens (already implemented)
+    function mint(address _address, uint256 _value) public onlyOwner {
+        require(_address == owner, "Only the contract owner can mint tokens");
+        totalSupply += _value;
+        balances[_address] += _value;
+    }
+
+    // Function to burn tokens (already implemented)
+    function burn(address _address, uint256 _value) public {
+        require(balances[_address] >= _value, "Insufficient balance");
+        totalSupply -= _value;
+        balances[_address] -= _value;
+    }
+
+    // Function to transfer tokens (already implemented)
+    function transfer(address _from, address _to, uint256 _value) public {
+        require(balances[_from] >= _value, "Insufficient balance");
+        balances[_from] -= _value;
+        balances[_to] += _value;
     }
 
     // Fallback function to reject any Ether sent to this contract
