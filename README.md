@@ -25,8 +25,7 @@ and destruction of the contract. It ensures that only the contract owner can per
 # Executing Program
 
 1.Compile the contract
-```bash
-npx hardhat compile
+ npx hardhat compile
 
 2.Deploy the contract to a network
 npx hardhat run scripts/deploy.js --network <network-name>
