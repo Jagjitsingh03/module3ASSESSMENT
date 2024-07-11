@@ -1,4 +1,5 @@
-# FreeBIRD Token Smart Contract
+# Project Title
+FreeBIRD Token Smart Contract
 
 # Description:
 
