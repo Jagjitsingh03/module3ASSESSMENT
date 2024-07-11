@@ -18,12 +18,20 @@ and destruction of the contract. It ensures that only the contract owner can per
 1. **Clone the repository**
    ```bash
    git clone [GitHub Repository Link]
-   cd FreeBIRD-Token-Smart-Contract
-   
-# 1.Install dependencies
+   cd FreeBIRD-Token-Smart-Contract   
+# Install dependencies
   npm install
-# 2.Deploy the contract
- npx hardhat run scripts/deploy.js --network <network-name>
+
+# Executing Program
+
+1.Compile the contract
+npx hardhat compile
+
+2.Deploy the contract to a network
+npx hardhat run scripts/deploy.js --network <network-name>
+
+3.Run Hardhat console for interaction
+npx hardhat console --network <network-name>
 
 # Configuration
 Ensure you have the necessary Ethereum network connection and API keys configured in your environment variables. For issues with deployment or contract interaction, check the Hardhat documentation or Solidity best practices.
